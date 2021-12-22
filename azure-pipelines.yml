@@ -1,0 +1,79 @@
+# .NET Desktop
+# Build and run tests for .NET Desktop or Windows classic desktop solutions.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
+
+pool: 'Acumatica Build Agent Pool'
+
+trigger:
+  # Do not run build on every commit: accumulate changes
+  # and run them together once the current build finishes.
+  batch: true
+  branches:
+    # Only main branch will trigger individual push-based CI builds.
+    # The rest of the branches will only trigger once a PR is created.
+    include:
+      - main
+
+# By default, only trigger CI runs for pull requests that target a main branch.
+# -
+pr:
+  - main
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+
+steps:
+- task: NuGetToolInstaller@0
+  displayName: Install NuGet Tools
+  inputs:
+    versionSpec: 5.x.x
+
+- task: NuGetCommand@2
+  displayName: NuGet Restore
+  inputs:
+    command: 'restore'
+    restoreSolution: '$(solution)'
+    feedsToUse: 'config'
+    nugetConfigPath: 'NuGet.Config'
+
+- task: VSBuild@1
+  displayName: Build Solution
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: 'Release'
+
+- task: PowerShell@2
+  displayName: Build Customization Project
+  inputs:
+    filePath: 'buildCustomization.ps1'
+    arguments: '$(Build.BuildNumber)'
+    
+- task: PowerShell@2
+  displayName: Publish Customization Project
+  inputs:
+    filePath: 'publishCustomization.ps1'
+
+- task: VSTest@2
+  displayName: Run tests
+  inputs:
+    configuration: 'Release'
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\TestProject.dll
+      !**\obj\**
+      !**\bin\**\ref\**
+
+- task: CopyFiles@2
+  displayName: Copy customization project to build artifacts
+  inputs:
+    contents: Customization\SimpleCustomization.zip
+    targetFolder: $(Build.ArtifactStagingDirectory)
+    
+- task: PublishBuildArtifacts@1
+  displayName: Publish build artifacts
+  inputs:
+    pathtoPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: Customization
