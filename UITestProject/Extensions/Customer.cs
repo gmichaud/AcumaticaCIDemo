@@ -1,7 +1,7 @@
 ﻿using Controls.ToolBarButton;
 using GeneratedWrappers.Acumatica;
 
-namespace TestProject.Extensions
+namespace UITestProject.Extensions
 {
     public class Customer : AR303000_CustomerMaint
     {

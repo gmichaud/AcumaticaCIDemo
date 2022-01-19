@@ -1,17 +1,11 @@
-using Core;
-using Core.Config;
-using Core.Login;
-using Core.TestExecution;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Diagnostics;
-using System.Management;
-using System.Reflection;
-using TestProject.Extensions;
+using UITestProject.Base;
+using UITestProject.Extensions;
 
-namespace TestProject
+namespace UITestProject
 {
     [TestClass]
-    public class CustomerMaintenanceTests : AcumaticaUITestBase
+    public class CustomerMaintenanceTests : UITestBase
     {
         [TestMethod]
         public void TestSendFaxButton()

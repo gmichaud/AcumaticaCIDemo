@@ -1,6 +1,6 @@
 ﻿using GeneratedWrappers.Acumatica;
 
-namespace TestProject.Extensions
+namespace UITestProject.Extensions
 {
     public class Company : CS101500_OrganizationMaint
     {

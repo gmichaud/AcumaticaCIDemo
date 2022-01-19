@@ -1,17 +1,14 @@
 ﻿using Core;
 using Core.Config;
 using Core.Login;
-using Core.TestExecution;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
-using System.Management;
 using System.Reflection;
-using TestProject.Extensions;
 
-namespace TestProject
+namespace UITestProject.Base
 {
     [TestClass]
-    public class AcumaticaUITestBase
+    public class UITestBase
     {
         [ClassInitialize(InheritanceBehavior.BeforeEachDerivedClass)]
         public static void Initialize(TestContext context)
