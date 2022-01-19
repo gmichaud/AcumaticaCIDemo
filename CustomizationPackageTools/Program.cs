@@ -103,7 +103,7 @@ namespace Velixo.Common.CustomizationPackageTools
 
             foreach (var file in Directory.GetFiles(currentDirectory))
             {
-                string targetZipFileName = file.Substring(rootDirectory.Length + 1);
+                string targetZipFileName = file.Substring(rootDirectory.Length);
                 Console.WriteLine($"Adding {targetZipFileName} to customization project...");
 
                 archive.CreateEntryFromFile(file, targetZipFileName, CompressionLevel.Optimal);
