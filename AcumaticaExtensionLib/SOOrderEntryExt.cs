@@ -6,6 +6,16 @@ namespace AcumaticaExtensionLib
 {
     public class SOOrderEntryExt : PXGraphExtension<SOOrderEntry>
     {
+        public override void Initialize()
+        {
+            base.Initialize();
+        }
+
+        public void BAccountR_RowInserted(PXCache sender, PXRowInsertedEventArgs e)
+        {
+
+        }
+
         [PXOverride]
         public void Persist(Action baseMethod)
         {
