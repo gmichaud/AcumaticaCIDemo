@@ -57,12 +57,21 @@ steps:
     filePath: 'publishCustomization.ps1'
 
 - task: VSTest@2
-  displayName: Run tests
+  displayName: Run Unit Tests
   inputs:
     configuration: 'Release'
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
       **\UnitTestProject.dll
+      !**\obj\**
+      !**\bin\**\ref\**
+
+- task: VSTest@2
+  displayName: Run UI Tests
+  inputs:
+    configuration: 'Release'
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
       **\UITestProject.dll
       !**\obj\**
       !**\bin\**\ref\**
