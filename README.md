@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/velixosolutions/Acumatica%20Continuous%20Integration%20Demo/_apis/build/status/VelixoSolutions.AcumaticaCIDemo)](https://dev.azure.com/velixosolutions/Acumatica%20Continuous%20Integration%20Demo/_build/latest?definitionId=1)
+[![Build Status](https://dev.azure.com/velixosolutions/Acumatica%20Continuous%20Integration%20Demo/_apis/build/status/VelixoSolutions.AcumaticaCIDemo?branchName=main)](https://dev.azure.com/velixosolutions/Acumatica%20Continuous%20Integration%20Demo/_build/latest?definitionId=4&branchName=main)
 
 Acumatica Continuous Integration / Continuous Delivery Demo
 ======================================
