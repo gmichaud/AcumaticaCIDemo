@@ -5,7 +5,7 @@ using UITestProject.Extensions;
 namespace UITestProject
 {
     [TestClass]
-    public class CustomerMaintenanceTests : UITestBase
+    public class CustomerSendFaxTests : UITestBase
     {
         [TestMethod]
         public void TestSendFaxButton()

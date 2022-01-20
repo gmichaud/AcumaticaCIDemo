@@ -62,6 +62,7 @@ steps:
     configuration: 'Release'
     testSelector: 'testAssemblies'
     testAssemblyVer2: |
+      **\UnitTestProject.dll
       **\UITestProject.dll
       !**\obj\**
       !**\bin\**\ref\**

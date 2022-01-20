@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PX.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\PX.Common.dll</HintPath>
+    </Reference>
     <Reference Include="PX.Data">
       <HintPath>..\Libs\PX.Data.dll</HintPath>
     </Reference>
@@ -47,7 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SOOrderEntryExt.cs" />
+    <Compile Include="CustomerSendFaxExt.cs" />
+    <Compile Include="SOOrderOrderNbrValidationExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

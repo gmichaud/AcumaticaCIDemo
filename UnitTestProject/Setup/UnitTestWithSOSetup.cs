@@ -33,13 +33,6 @@ namespace UnitTestProject.Setup
             where Graph : PXGraph
         {
             Setup<Graph>(
-                new Numbering
-                {
-                    NumberingID = "SONUM",
-                    Descr = "SO Numbering",
-                    NewSymbol = "<NEW>",
-                    UserNumbering = true
-                },
                 new SOOrderTypeOperation
                 {
                     OrderType = "SO",
@@ -58,8 +51,7 @@ namespace UnitTestProject.Setup
                     Template = "SO",
                     IsSystem = true,
                     Behavior = "SO",
-                    DefaultOperation = "I", 
-                    //OrderNumberingID = "SONUM"
+                    DefaultOperation = "I"
                 }) ;
         }
 
