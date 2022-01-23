@@ -6,7 +6,7 @@ namespace AcumaticaExtensionLib
 {
     public class SOOrderOrderNbrValidationExt : PXGraphExtension<SOOrderEntry>
     {
-        private const decimal OrderNbrRequiredAmount = 1000;
+        private const decimal OrderNbrRequiredAmount = 5000;
 
         public void _(Events.RowUpdated<SOOrder> e)
         {
