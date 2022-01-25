@@ -2,7 +2,7 @@
 
 Acumatica Continuous Integration / Continuous Delivery Demo
 ======================================
-A proof of concept showing how you can apply CI/CD principles to your Acumatica development projects.
+A proof of concept showing how you can apply CI/CD principles to your Acumatica development projects. The slide deck of the Acumatica Summit presentation can be found [here](https://github.com/VelixoSolutions/AcumaticaCIDemo/blob/main/Slide%20Deck.pptx)
 
 ### Technologies Used
 * Acumatica 2021 R2
