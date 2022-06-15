@@ -12,7 +12,7 @@ namespace AcumaticaExtensionLib
         protected void sendFax()
         {
             var defContactAddress = Base.GetExtension<CustomerMaint.DefContactAddressExt>();
-            defContactAddress.DefContact.Current.Fax = "Who still uses a Fax?";
+            defContactAddress.DefContact.Current.Fax = "Fax rules";
             defContactAddress.DefContact.Update(defContactAddress.DefContact.Current);
         }
     }
